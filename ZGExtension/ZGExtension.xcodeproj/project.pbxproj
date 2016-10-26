@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF3F7AD41DC0F7AA00EE1446 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7AD31DC0F7AA00EE1446 /* main.m */; };
+		EF3F7AD71DC0F7AA00EE1446 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7AD61DC0F7AA00EE1446 /* AppDelegate.m */; };
+		EF3F7ADA1DC0F7AA00EE1446 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7AD91DC0F7AA00EE1446 /* ViewController.m */; };
+		EF3F7ADD1DC0F7AA00EE1446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3F7ADB1DC0F7AA00EE1446 /* Main.storyboard */; };
+		EF3F7ADF1DC0F7AA00EE1446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3F7ADE1DC0F7AA00EE1446 /* Assets.xcassets */; };
+		EF3F7AE21DC0F7AA00EE1446 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3F7AE01DC0F7AA00EE1446 /* LaunchScreen.storyboard */; };
+		EF3F7AED1DC0F7AA00EE1446 /* ZGExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7AEC1DC0F7AA00EE1446 /* ZGExtensionTests.m */; };
+		EF3F7AF81DC0F7AA00EE1446 /* ZGExtensionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7AF71DC0F7AA00EE1446 /* ZGExtensionUITests.m */; };
+		EF3F7B081DC0F7FD00EE1446 /* NSObject+ZGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7B071DC0F7FD00EE1446 /* NSObject+ZGExtension.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF3F7AE91DC0F7AA00EE1446 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3F7AC71DC0F7AA00EE1446 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF3F7ACE1DC0F7AA00EE1446;
+			remoteInfo = ZGExtension;
+		};
+		EF3F7AF41DC0F7AA00EE1446 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3F7AC71DC0F7AA00EE1446 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF3F7ACE1DC0F7AA00EE1446;
+			remoteInfo = ZGExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF3F7ACF1DC0F7AA00EE1446 /* ZGExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZGExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3F7AD31DC0F7AA00EE1446 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EF3F7AD51DC0F7AA00EE1446 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EF3F7AD61DC0F7AA00EE1446 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EF3F7AD81DC0F7AA00EE1446 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EF3F7AD91DC0F7AA00EE1446 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EF3F7ADC1DC0F7AA00EE1446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF3F7ADE1DC0F7AA00EE1446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF3F7AE11DC0F7AA00EE1446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF3F7AE31DC0F7AA00EE1446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3F7AE81DC0F7AA00EE1446 /* ZGExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZGExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3F7AEC1DC0F7AA00EE1446 /* ZGExtensionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZGExtensionTests.m; sourceTree = "<group>"; };
+		EF3F7AEE1DC0F7AA00EE1446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3F7AF31DC0F7AA00EE1446 /* ZGExtensionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZGExtensionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3F7AF71DC0F7AA00EE1446 /* ZGExtensionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZGExtensionUITests.m; sourceTree = "<group>"; };
+		EF3F7AF91DC0F7AA00EE1446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3F7B061DC0F7FD00EE1446 /* NSObject+ZGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZGExtension.h"; sourceTree = "<group>"; };
+		EF3F7B071DC0F7FD00EE1446 /* NSObject+ZGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZGExtension.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF3F7ACC1DC0F7AA00EE1446 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3F7AE51DC0F7AA00EE1446 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3F7AF01DC0F7AA00EE1446 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF3F7AC61DC0F7AA00EE1446 = {
+			isa = PBXGroup;
+			children = (
+				EF3F7AD11DC0F7AA00EE1446 /* ZGExtension */,
+				EF3F7AEB1DC0F7AA00EE1446 /* ZGExtensionTests */,
+				EF3F7AF61DC0F7AA00EE1446 /* ZGExtensionUITests */,
+				EF3F7AD01DC0F7AA00EE1446 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF3F7AD01DC0F7AA00EE1446 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF3F7ACF1DC0F7AA00EE1446 /* ZGExtension.app */,
+				EF3F7AE81DC0F7AA00EE1446 /* ZGExtensionTests.xctest */,
+				EF3F7AF31DC0F7AA00EE1446 /* ZGExtensionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF3F7AD11DC0F7AA00EE1446 /* ZGExtension */ = {
+			isa = PBXGroup;
+			children = (
+				EF3F7B051DC0F7C800EE1446 /* ZGExtension */,
+				EF3F7AD51DC0F7AA00EE1446 /* AppDelegate.h */,
+				EF3F7AD61DC0F7AA00EE1446 /* AppDelegate.m */,
+				EF3F7AD81DC0F7AA00EE1446 /* ViewController.h */,
+				EF3F7AD91DC0F7AA00EE1446 /* ViewController.m */,
+				EF3F7ADB1DC0F7AA00EE1446 /* Main.storyboard */,
+				EF3F7ADE1DC0F7AA00EE1446 /* Assets.xcassets */,
+				EF3F7AE01DC0F7AA00EE1446 /* LaunchScreen.storyboard */,
+				EF3F7AE31DC0F7AA00EE1446 /* Info.plist */,
+				EF3F7AD21DC0F7AA00EE1446 /* Supporting Files */,
+			);
+			path = ZGExtension;
+			sourceTree = "<group>";
+		};
+		EF3F7AD21DC0F7AA00EE1446 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF3F7AD31DC0F7AA00EE1446 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EF3F7AEB1DC0F7AA00EE1446 /* ZGExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF3F7AEC1DC0F7AA00EE1446 /* ZGExtensionTests.m */,
+				EF3F7AEE1DC0F7AA00EE1446 /* Info.plist */,
+			);
+			path = ZGExtensionTests;
+			sourceTree = "<group>";
+		};
+		EF3F7AF61DC0F7AA00EE1446 /* ZGExtensionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF3F7AF71DC0F7AA00EE1446 /* ZGExtensionUITests.m */,
+				EF3F7AF91DC0F7AA00EE1446 /* Info.plist */,
+			);
+			path = ZGExtensionUITests;
+			sourceTree = "<group>";
+		};
+		EF3F7B051DC0F7C800EE1446 /* ZGExtension */ = {
+			isa = PBXGroup;
+			children = (
+				EF3F7B061DC0F7FD00EE1446 /* NSObject+ZGExtension.h */,
+				EF3F7B071DC0F7FD00EE1446 /* NSObject+ZGExtension.m */,
+			);
+			path = ZGExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF3F7ACE1DC0F7AA00EE1446 /* ZGExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3F7AFC1DC0F7AA00EE1446 /* Build configuration list for PBXNativeTarget "ZGExtension" */;
+			buildPhases = (
+				EF3F7ACB1DC0F7AA00EE1446 /* Sources */,
+				EF3F7ACC1DC0F7AA00EE1446 /* Frameworks */,
+				EF3F7ACD1DC0F7AA00EE1446 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZGExtension;
+			productName = ZGExtension;
+			productReference = EF3F7ACF1DC0F7AA00EE1446 /* ZGExtension.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF3F7AE71DC0F7AA00EE1446 /* ZGExtensionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3F7AFF1DC0F7AA00EE1446 /* Build configuration list for PBXNativeTarget "ZGExtensionTests" */;
+			buildPhases = (
+				EF3F7AE41DC0F7AA00EE1446 /* Sources */,
+				EF3F7AE51DC0F7AA00EE1446 /* Frameworks */,
+				EF3F7AE61DC0F7AA00EE1446 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF3F7AEA1DC0F7AA00EE1446 /* PBXTargetDependency */,
+			);
+			name = ZGExtensionTests;
+			productName = ZGExtensionTests;
+			productReference = EF3F7AE81DC0F7AA00EE1446 /* ZGExtensionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF3F7AF21DC0F7AA00EE1446 /* ZGExtensionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3F7B021DC0F7AA00EE1446 /* Build configuration list for PBXNativeTarget "ZGExtensionUITests" */;
+			buildPhases = (
+				EF3F7AEF1DC0F7AA00EE1446 /* Sources */,
+				EF3F7AF01DC0F7AA00EE1446 /* Frameworks */,
+				EF3F7AF11DC0F7AA00EE1446 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF3F7AF51DC0F7AA00EE1446 /* PBXTargetDependency */,
+			);
+			name = ZGExtensionUITests;
+			productName = ZGExtensionUITests;
+			productReference = EF3F7AF31DC0F7AA00EE1446 /* ZGExtensionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF3F7AC71DC0F7AA00EE1446 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = XuZonggen;
+				TargetAttributes = {
+					EF3F7ACE1DC0F7AA00EE1446 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					EF3F7AE71DC0F7AA00EE1446 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = EF3F7ACE1DC0F7AA00EE1446;
+					};
+					EF3F7AF21DC0F7AA00EE1446 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = EF3F7ACE1DC0F7AA00EE1446;
+					};
+				};
+			};
+			buildConfigurationList = EF3F7ACA1DC0F7AA00EE1446 /* Build configuration list for PBXProject "ZGExtension" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF3F7AC61DC0F7AA00EE1446;
+			productRefGroup = EF3F7AD01DC0F7AA00EE1446 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF3F7ACE1DC0F7AA00EE1446 /* ZGExtension */,
+				EF3F7AE71DC0F7AA00EE1446 /* ZGExtensionTests */,
+				EF3F7AF21DC0F7AA00EE1446 /* ZGExtensionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF3F7ACD1DC0F7AA00EE1446 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3F7AE21DC0F7AA00EE1446 /* LaunchScreen.storyboard in Resources */,
+				EF3F7ADF1DC0F7AA00EE1446 /* Assets.xcassets in Resources */,
+				EF3F7ADD1DC0F7AA00EE1446 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3F7AE61DC0F7AA00EE1446 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3F7AF11DC0F7AA00EE1446 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF3F7ACB1DC0F7AA00EE1446 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3F7ADA1DC0F7AA00EE1446 /* ViewController.m in Sources */,
+				EF3F7AD71DC0F7AA00EE1446 /* AppDelegate.m in Sources */,
+				EF3F7B081DC0F7FD00EE1446 /* NSObject+ZGExtension.m in Sources */,
+				EF3F7AD41DC0F7AA00EE1446 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3F7AE41DC0F7AA00EE1446 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3F7AED1DC0F7AA00EE1446 /* ZGExtensionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3F7AEF1DC0F7AA00EE1446 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3F7AF81DC0F7AA00EE1446 /* ZGExtensionUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF3F7AEA1DC0F7AA00EE1446 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF3F7ACE1DC0F7AA00EE1446 /* ZGExtension */;
+			targetProxy = EF3F7AE91DC0F7AA00EE1446 /* PBXContainerItemProxy */;
+		};
+		EF3F7AF51DC0F7AA00EE1446 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF3F7ACE1DC0F7AA00EE1446 /* ZGExtension */;
+			targetProxy = EF3F7AF41DC0F7AA00EE1446 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF3F7ADB1DC0F7AA00EE1446 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF3F7ADC1DC0F7AA00EE1446 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF3F7AE01DC0F7AA00EE1446 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF3F7AE11DC0F7AA00EE1446 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF3F7AFA1DC0F7AA00EE1446 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF3F7AFB1DC0F7AA00EE1446 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF3F7AFD1DC0F7AA00EE1446 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZGExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Zong.ZGExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EF3F7AFE1DC0F7AA00EE1446 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZGExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Zong.ZGExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EF3F7B001DC0F7AA00EE1446 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZGExtensionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Zong.ZGExtensionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZGExtension.app/ZGExtension";
+			};
+			name = Debug;
+		};
+		EF3F7B011DC0F7AA00EE1446 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZGExtensionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Zong.ZGExtensionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZGExtension.app/ZGExtension";
+			};
+			name = Release;
+		};
+		EF3F7B031DC0F7AA00EE1446 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZGExtensionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Zong.ZGExtensionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZGExtension;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		EF3F7B041DC0F7AA00EE1446 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZGExtensionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Zong.ZGExtensionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZGExtension;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF3F7ACA1DC0F7AA00EE1446 /* Build configuration list for PBXProject "ZGExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3F7AFA1DC0F7AA00EE1446 /* Debug */,
+				EF3F7AFB1DC0F7AA00EE1446 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF3F7AFC1DC0F7AA00EE1446 /* Build configuration list for PBXNativeTarget "ZGExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3F7AFD1DC0F7AA00EE1446 /* Debug */,
+				EF3F7AFE1DC0F7AA00EE1446 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF3F7AFF1DC0F7AA00EE1446 /* Build configuration list for PBXNativeTarget "ZGExtensionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3F7B001DC0F7AA00EE1446 /* Debug */,
+				EF3F7B011DC0F7AA00EE1446 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF3F7B021DC0F7AA00EE1446 /* Build configuration list for PBXNativeTarget "ZGExtensionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3F7B031DC0F7AA00EE1446 /* Debug */,
+				EF3F7B041DC0F7AA00EE1446 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF3F7AC71DC0F7AA00EE1446 /* Project object */;
+}
