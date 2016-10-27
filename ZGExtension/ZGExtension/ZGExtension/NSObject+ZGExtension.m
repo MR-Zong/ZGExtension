@@ -18,6 +18,12 @@
 #define ClassStringForInt  ( @"q" )
 #define ClassStringForBool  ( @"B" )
 
+/**
+ * 明天任务：
+ * 1，解决属性名映射
+ * 2，解决新建一个属性来直接指向需要用到的深层级的对象(必须实现)
+ **/
+
 @implementation NSObject (ZGExtension)
 
 + (instancetype)objectWithDictionary:(NSDictionary *)dict
@@ -165,14 +171,14 @@
 }
 
 #pragma mark - isSystemClass
-+ (BOOL)isSystemClass
++ (BOOL)isSystemClassWithObject:(id)object
 {
-    NSBundle *mainB = [NSBundle bundleForClass:[self class]];
+    NSBundle *mainB = [NSBundle bundleForClass:[object class]];
     if (mainB == [NSBundle mainBundle]) {
-        NSLog(@"自定义的类");
+//        NSLog(@"自定义的类");
         return NO;
     }else {
-        NSLog(@"系统的类");
+//        NSLog(@"系统的类");
         return YES;
     }
 }
@@ -194,7 +200,7 @@
     }
 }
 
-+ (BOOL)isSystemClassWithObject:(NSObject *)object
++ (BOOL)isSystemClassByDescriptionWithObject:(NSObject *)object
 {
 //    NSLog(@"desc %@",object.description);
     // 正则匹配是否是自定义类型
@@ -202,7 +208,6 @@
     NSString *regex = @"<[a-zA-z]+: 0x([0-9]|[a-f])+>";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     BOOL isValid = [predicate evaluateWithObject:object.description];
-//    NSLog(@"isValid %zd",isValid);
     return !isValid;
 }
 
