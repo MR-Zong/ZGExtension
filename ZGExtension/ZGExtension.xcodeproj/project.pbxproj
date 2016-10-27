@@ -15,7 +15,8 @@
 		EF3F7AE21DC0F7AA00EE1446 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF3F7AE01DC0F7AA00EE1446 /* LaunchScreen.storyboard */; };
 		EF3F7AED1DC0F7AA00EE1446 /* ZGExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7AEC1DC0F7AA00EE1446 /* ZGExtensionTests.m */; };
 		EF3F7AF81DC0F7AA00EE1446 /* ZGExtensionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7AF71DC0F7AA00EE1446 /* ZGExtensionUITests.m */; };
-		EF3F7B081DC0F7FD00EE1446 /* NSObject+ZGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7B071DC0F7FD00EE1446 /* NSObject+ZGExtension.m */; settings = {ASSET_TAGS = (); }; };
+		EF3F7B081DC0F7FD00EE1446 /* NSObject+ZGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7B071DC0F7FD00EE1446 /* NSObject+ZGExtension.m */; };
+		EFB695841DC19229003BE1FA /* ZGDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB695831DC19229003BE1FA /* ZGDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,9 @@
 		EF3F7AF91DC0F7AA00EE1446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF3F7B061DC0F7FD00EE1446 /* NSObject+ZGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZGExtension.h"; sourceTree = "<group>"; };
 		EF3F7B071DC0F7FD00EE1446 /* NSObject+ZGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZGExtension.m"; sourceTree = "<group>"; };
+		EFB6957F1DC19188003BE1FA /* ZGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGExtension.h; sourceTree = "<group>"; };
+		EFB695821DC19229003BE1FA /* ZGDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGDataModel.h; sourceTree = "<group>"; };
+		EFB695831DC19229003BE1FA /* ZGDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				EF3F7AD31DC0F7AA00EE1446 /* main.m */,
+				EFB695821DC19229003BE1FA /* ZGDataModel.h */,
+				EFB695831DC19229003BE1FA /* ZGDataModel.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -147,10 +153,19 @@
 		EF3F7B051DC0F7C800EE1446 /* ZGExtension */ = {
 			isa = PBXGroup;
 			children = (
+				EFB6957E1DC19170003BE1FA /* Include */,
 				EF3F7B061DC0F7FD00EE1446 /* NSObject+ZGExtension.h */,
 				EF3F7B071DC0F7FD00EE1446 /* NSObject+ZGExtension.m */,
 			);
 			path = ZGExtension;
+			sourceTree = "<group>";
+		};
+		EFB6957E1DC19170003BE1FA /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				EFB6957F1DC19188003BE1FA /* ZGExtension.h */,
+			);
+			path = Include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +302,7 @@
 				EF3F7AD71DC0F7AA00EE1446 /* AppDelegate.m in Sources */,
 				EF3F7B081DC0F7FD00EE1446 /* NSObject+ZGExtension.m in Sources */,
 				EF3F7AD41DC0F7AA00EE1446 /* main.m in Sources */,
+				EFB695841DC19229003BE1FA /* ZGDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +528,7 @@
 				EF3F7AFE1DC0F7AA00EE1446 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF3F7AFF1DC0F7AA00EE1446 /* Build configuration list for PBXNativeTarget "ZGExtensionTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +537,7 @@
 				EF3F7B011DC0F7AA00EE1446 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF3F7B021DC0F7AA00EE1446 /* Build configuration list for PBXNativeTarget "ZGExtensionUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +546,7 @@
 				EF3F7B041DC0F7AA00EE1446 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

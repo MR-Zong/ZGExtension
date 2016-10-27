@@ -10,4 +10,10 @@
 
 @interface NSObject (ZGExtension)
 
++ (instancetype)objectWithDictionary:(NSDictionary *)dict;
++ (NSMutableArray *)objectsArrayWithDictionaryArray:(NSArray *)dictArray;
+
++ (NSMutableDictionary *)dictionaryWithObject:(id)object;
++ (NSMutableArray *)dictionaryArrayWithObjectsArray:(NSArray *)objectsArray;
+
 @end
