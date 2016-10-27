@@ -16,4 +16,6 @@
 + (NSMutableDictionary *)dictionaryWithObject:(id)object;
 + (NSMutableArray *)dictionaryArrayWithObjectsArray:(NSArray *)objectsArray;
 
++ (NSDictionary *)dictionaryForObjectInArray;
+
 @end

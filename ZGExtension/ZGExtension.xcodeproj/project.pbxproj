@@ -17,6 +17,7 @@
 		EF3F7AF81DC0F7AA00EE1446 /* ZGExtensionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7AF71DC0F7AA00EE1446 /* ZGExtensionUITests.m */; };
 		EF3F7B081DC0F7FD00EE1446 /* NSObject+ZGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7B071DC0F7FD00EE1446 /* NSObject+ZGExtension.m */; };
 		EFB695841DC19229003BE1FA /* ZGDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB695831DC19229003BE1FA /* ZGDataModel.m */; };
+		EFB695871DC1F0FB003BE1FA /* NSString+ZGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB695861DC1F0FB003BE1FA /* NSString+ZGExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		EFB6957F1DC19188003BE1FA /* ZGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGExtension.h; sourceTree = "<group>"; };
 		EFB695821DC19229003BE1FA /* ZGDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGDataModel.h; sourceTree = "<group>"; };
 		EFB695831DC19229003BE1FA /* ZGDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGDataModel.m; sourceTree = "<group>"; };
+		EFB695851DC1F0FB003BE1FA /* NSString+ZGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZGExtension.h"; sourceTree = "<group>"; };
+		EFB695861DC1F0FB003BE1FA /* NSString+ZGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZGExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				EFB6957E1DC19170003BE1FA /* Include */,
 				EF3F7B061DC0F7FD00EE1446 /* NSObject+ZGExtension.h */,
 				EF3F7B071DC0F7FD00EE1446 /* NSObject+ZGExtension.m */,
+				EFB695851DC1F0FB003BE1FA /* NSString+ZGExtension.h */,
+				EFB695861DC1F0FB003BE1FA /* NSString+ZGExtension.m */,
 			);
 			path = ZGExtension;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB695871DC1F0FB003BE1FA /* NSString+ZGExtension.m in Sources */,
 				EF3F7ADA1DC0F7AA00EE1446 /* ViewController.m in Sources */,
 				EF3F7AD71DC0F7AA00EE1446 /* AppDelegate.m in Sources */,
 				EF3F7B081DC0F7FD00EE1446 /* NSObject+ZGExtension.m in Sources */,

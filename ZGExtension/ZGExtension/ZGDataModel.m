@@ -8,6 +8,23 @@
 
 #import "ZGDataModel.h"
 
+
+@implementation ZGTeacherModel
+
+@end
+
+
+@implementation ZGDog
+
+@end
+
 @implementation ZGDataModel
+
++ (NSDictionary *)dictionaryForObjectInArray
+{
+    return @{
+             @"teachersArray" : @"ZGTeacherModel"
+             };
+}
 
 @end
