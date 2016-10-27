@@ -110,7 +110,7 @@
             ivar_name = [ivar_name substringFromIndex:1];
         }
 //        NSLog(@"%@",ivar_name);
-        NSLog(@"%@",ivar_type);
+//        NSLog(@"%@",ivar_type);
 
         if (ivar_value) {
             // 把object的属性值赋给dict
@@ -196,13 +196,12 @@
 
 + (BOOL)isSystemClassWithObject:(NSObject *)object
 {
-    NSString *desc = [NSString stringWithFormat:@"%@",object];
-//    NSLog(@"desc %@",desc);
+//    NSLog(@"desc %@",object.description);
     // 正则匹配是否是自定义类型
     // <ZGDog: 0x608000014cd0>
     NSString *regex = @"<[a-zA-z]+: 0x([0-9]|[a-f])+>";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    BOOL isValid = [predicate evaluateWithObject:desc];
+    BOOL isValid = [predicate evaluateWithObject:object.description];
 //    NSLog(@"isValid %zd",isValid);
     return !isValid;
 }
