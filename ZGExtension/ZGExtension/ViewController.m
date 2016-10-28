@@ -20,8 +20,8 @@
     [super viewDidLoad];
     
     // 样例演示
-    [self example1];
-//    [self example2];
+   // [self example1];
+    [self example2];
 }
 
 
@@ -39,7 +39,18 @@
                            @"schoolReport" : @{@"math":@78,@"english":@90},
                            @"classmateArray" : @[@"马云",@"王健林"],
                            @"dog" : @{@"name" : @"wangCai"},
-                           @"id" : @10001
+                           @"id" : @10001,
+                           @"gradeInfo" : @{
+                                   @"wealthGrade":@{ @"grade" : @88 , @"name":@"wealth"},
+                                   @"glamourGrade":@{ @"grade" : @99 , @"name":@"glamour"}},
+                           @"houses" : @{
+                                   @"rooms" : @[
+                                           @{@"roomNumber":@100, @"roomOwer" : @"dad"},
+                                           @{@"roomNumber":@101, @"roomOwer" : @"mam"},
+                                           @{@"roomNumber":@102, @"roomOwer" : @"zong"}
+                                           ],
+                                   @"price" : @250
+                                   }
                            };
     
     ZGDataModel *model =  [ZGDataModel objectWithDictionary:dict];
@@ -56,6 +67,8 @@
     NSLog(@"    classmateArray %@",model.classmateArray);
     NSLog(@"    dog %@",model.dog);
     NSLog(@"    ID %zd",model.ID);
+    NSLog(@"    grade %zd",model.grade);
+    NSLog(@"    myRoomNumber %zd",model.myRoomNumber);
     NSLog(@"                    ");
 }
 
@@ -86,6 +99,8 @@
     model.classmateArray = @[@"马云",@"王健林"];
     model.dog = dog;
     model.ID = 10001;
+    model.grade = 88;
+    model.myRoomNumber = 102;
     NSDictionary *dict = [ZGDataModel dictionaryWithObject:model];
     NSLog(@"dict %@",dict);
 }

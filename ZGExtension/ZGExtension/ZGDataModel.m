@@ -34,4 +34,12 @@
              };
 }
 
++ (NSDictionary *)dictionaryForPropertyNameComplexMap
+{
+    return @{
+             @"grade" : @"gradeInfo.wealthGrade.grade",
+             @"myRoomNumber" : @"houses.rooms.@1.roomNumber"
+             };
+}
+
 @end

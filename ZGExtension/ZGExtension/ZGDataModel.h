@@ -36,7 +36,12 @@
 @property (nonatomic, strong) NSDictionary *schoolReport;
 @property (nonatomic, strong) NSArray *classmateArray;
 
+// 直接映射
 @property (nonatomic, assign) NSInteger ID;
+
+// 深层级映射
+@property (nonatomic, assign) NSInteger grade;
+@property (nonatomic, assign) NSInteger myRoomNumber;
 
 @property (nonatomic, strong) ZGDog *dog;
 

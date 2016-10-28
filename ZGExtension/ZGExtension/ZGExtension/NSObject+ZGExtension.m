@@ -35,6 +35,9 @@
     NSArray *objectInArrayAllKeys = objectInArrayDict.allKeys;
     NSDictionary *propertyNameDict = [self dictionaryForPropertyNameMap];
     NSArray *propertyNameAllKeys = propertyNameDict.allKeys;
+    NSDictionary *propertyNameComplexDict = [self dictionaryForPropertyNameComplexMap];
+    NSArray *propertyNameComplexAllKeys = propertyNameComplexDict.allKeys;
+    
     
     unsigned int outCount;
     Ivar *ivars =  class_copyIvarList([self class], &outCount);
@@ -48,10 +51,10 @@
         NSString *map_ivar_name = ivar_name;
         
         
-//        NSLog(@"%@",ivar_name);
+       // NSLog(@"%@",ivar_name);
 //        NSLog(@"%@",ivar_type);
         
-        // 处理属性名映射
+        // 处理属性名映射 - 直接映射
         if (propertyNameAllKeys.count > 0) {
             if ([propertyNameAllKeys containsObject:ivar_name]) {
                 map_ivar_name = propertyNameDict[ivar_name];
@@ -60,6 +63,27 @@
                 }
             }
         }
+        
+        // 处理属性名映射 - 复杂映射
+        if (propertyNameComplexAllKeys.count > 0) {
+            if ([propertyNameComplexAllKeys containsObject:ivar_name]) {
+                map_ivar_name = propertyNameComplexDict[ivar_name];
+                if (map_ivar_name.length <= 0) {
+                    map_ivar_name = ivar_name;
+                }else {
+                    id value_keyPath = [self valueWithObject:dict keyPath:map_ivar_name];
+                    if (value_keyPath) {
+                        [obj setValue:value_keyPath forKey:ivar_name];
+                    }
+                    
+                    // 此次属性已经处理完毕
+                     ivars++;
+                    continue;
+                }
+            }
+        }
+        
+        
         
 //        NSLog(@"map_ivar_name %@",map_ivar_name);
         
@@ -113,6 +137,48 @@
     return objsArray;
 }
 
++ (id)valueWithObject:(id)object keyPath:(NSString *)keyPath
+{
+    if (!object) {
+        return nil;
+    }
+    
+    if (keyPath.length > 0) {
+        
+        if ([[keyPath substringToIndex:1] isEqualToString:@"."]) {
+            keyPath = [keyPath substringFromIndex:1];
+        }
+        NSString *key = [keyPath componentsSeparatedByString:@"."].firstObject;
+        keyPath = [keyPath substringFromIndex:key.length];
+        //NSLog(@"key %@",key);
+        
+        if ([object isKindOfClass:[NSDictionary class]]) {
+            return [self valueWithObject:object[key] keyPath:keyPath];
+        }else if ([object isKindOfClass:[NSArray class]]){
+            if (![key containsString:@"@"]) {
+                return nil;
+            }else {
+                if ([key isEqualToString:@"@@"]) {
+                    return [self valueWithObject:[object lastObject] keyPath:keyPath];
+                }else {
+                    int index = [[key substringToIndex:1] intValue];
+                    return [self valueWithObject:object[index] keyPath:keyPath];
+                }
+            }
+        }else {
+            return nil;
+        }
+        
+    }else {
+        return object;
+        
+    }
+    
+    
+    
+    return nil;
+}
+
 + (NSMutableDictionary *)dictionaryWithObject:(id)object
 {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -120,7 +186,8 @@
     NSArray *objectInArrayAllKeys = objectInArrayDict.allKeys;
     NSDictionary *propertyNameDict = [self dictionaryForPropertyNameMap];
     NSArray *propertyNameAllKeys = propertyNameDict.allKeys;
-    
+    NSDictionary *propertyNameComplexDict = [self dictionaryForPropertyNameComplexMap];
+    NSArray *propertyNameComplexAllKeys = propertyNameComplexDict.allKeys;
     
     unsigned int outCount;
     Ivar *ivars =  class_copyIvarList([object class], &outCount);
@@ -137,7 +204,7 @@
 //        NSLog(@"%@",ivar_name);
 //        NSLog(@"%@",ivar_type);
         
-        // 处理属性名映射
+        // 处理属性名映射 - 直接映射
         if (propertyNameAllKeys.count > 0) {
             if ([propertyNameAllKeys containsObject:ivar_name]) {
                 map_ivar_name = propertyNameDict[ivar_name];
@@ -146,6 +213,28 @@
                 }
             }
         }
+        
+        // 处理属性名映射 - 复杂映射
+        if (propertyNameComplexAllKeys.count > 0) {
+            if ([propertyNameComplexAllKeys containsObject:ivar_name]) {
+                map_ivar_name = propertyNameComplexDict[ivar_name];
+                if (map_ivar_name.length <= 0) {
+                    map_ivar_name = ivar_name;
+                }else {
+                    id value_keyPath = [self valueForkeyPath:map_ivar_name object:ivar_value];
+                    if (value_keyPath) {
+                        [dict setValue:value_keyPath forKey:ivar_name];
+                    }else {
+                        [dict setValue:@"" forKey:ivar_name];
+                    }
+                    
+                    // 此次属性已经处理完毕
+                    ivars++;
+                    continue;
+                }
+            }
+        }
+        
         
 
         if (ivar_value) {
@@ -194,7 +283,47 @@
     return dictArray;
 }
 
-
++ (id)valueForkeyPath:(NSString *)keyPath object:(id)object
+{
+    if (!object) {
+        return nil;
+    }
+    
+    if (keyPath.length > 0) {
+        
+        if ([[keyPath substringToIndex:1] isEqualToString:@"."]) {
+            keyPath = [keyPath substringFromIndex:1];
+        }
+        NSString *key = [keyPath componentsSeparatedByString:@"."].firstObject;
+        keyPath = [keyPath substringFromIndex:key.length];
+        //NSLog(@"key %@",key);
+        
+        if ([object isKindOfClass:[NSDictionary class]]) {
+            return [self valueWithObject:object[key] keyPath:keyPath];
+        }else if ([object isKindOfClass:[NSArray class]]){
+            if (![key containsString:@"@"]) {
+                return nil;
+            }else {
+                if ([key isEqualToString:@"@@"]) {
+                    return [self valueWithObject:[object lastObject] keyPath:keyPath];
+                }else {
+                    int index = [[key substringToIndex:1] intValue];
+                    return [self valueWithObject:object[index] keyPath:keyPath];
+                }
+            }
+        }else {
+            return nil;
+        }
+        
+    }else {
+        return object;
+        
+    }
+    
+    
+    
+    return nil;
+}
 
 #pragma mark - 
 + (NSDictionary *)dictionaryForObjectInArray
@@ -203,6 +332,11 @@
 }
 
 + (NSDictionary *)dictionaryForPropertyNameMap
+{
+    return nil;
+}
+
++ (NSDictionary *)dictionaryForPropertyNameComplexMap
 {
     return nil;
 }
