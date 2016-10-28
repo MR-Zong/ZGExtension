@@ -20,8 +20,8 @@
     [super viewDidLoad];
     
     // 样例演示
-//    [self example1];
-    [self example2];
+    [self example1];
+//    [self example2];
 }
 
 
@@ -38,7 +38,8 @@
                            @"teachersArray" : @[@{@"name":@"张老师",@"age":@18},@{@"name":@"李老师",@"age":@64}],
                            @"schoolReport" : @{@"math":@78,@"english":@90},
                            @"classmateArray" : @[@"马云",@"王健林"],
-                           @"dog" : @{@"name" : @"wangCai"}
+                           @"dog" : @{@"name" : @"wangCai"},
+                           @"id" : @10001
                            };
     
     ZGDataModel *model =  [ZGDataModel objectWithDictionary:dict];
@@ -54,6 +55,7 @@
     NSLog(@"    schoolReport %@",model.schoolReport);
     NSLog(@"    classmateArray %@",model.classmateArray);
     NSLog(@"    dog %@",model.dog);
+    NSLog(@"    ID %zd",model.ID);
     NSLog(@"                    ");
 }
 
@@ -83,6 +85,7 @@
     model.schoolReport = @{@"math":@78,@"english":@90};
     model.classmateArray = @[@"马云",@"王健林"];
     model.dog = dog;
+    model.ID = 10001;
     NSDictionary *dict = [ZGDataModel dictionaryWithObject:model];
     NSLog(@"dict %@",dict);
 }

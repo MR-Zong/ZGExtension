@@ -27,4 +27,11 @@
              };
 }
 
++ (NSDictionary *)dictionaryForPropertyNameMap
+{
+    return @{
+             @"ID" : @"id"
+             };
+}
+
 @end

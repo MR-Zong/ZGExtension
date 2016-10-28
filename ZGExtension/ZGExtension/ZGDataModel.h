@@ -36,6 +36,8 @@
 @property (nonatomic, strong) NSDictionary *schoolReport;
 @property (nonatomic, strong) NSArray *classmateArray;
 
+@property (nonatomic, assign) NSInteger ID;
+
 @property (nonatomic, strong) ZGDog *dog;
 
 @end

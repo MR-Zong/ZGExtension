@@ -30,9 +30,12 @@
 {
     id obj = [[[self class] alloc] init];
 
-    NSArray *allKeys = dict.allKeys;
+    NSArray *dictAllKeys = dict.allKeys;
     NSDictionary *objectInArrayDict = [self dictionaryForObjectInArray];
     NSArray *objectInArrayAllKeys = objectInArrayDict.allKeys;
+    NSDictionary *propertyNameDict = [self dictionaryForPropertyNameMap];
+    NSArray *propertyNameAllKeys = propertyNameDict.allKeys;
+    
     unsigned int outCount;
     Ivar *ivars =  class_copyIvarList([self class], &outCount);
     while (*ivars != NULL) {
@@ -42,45 +45,56 @@
         if ([[ivar_name substringToIndex:1] isEqualToString:@"_"]) {
             ivar_name = [ivar_name substringFromIndex:1];
         }
+        NSString *map_ivar_name = ivar_name;
+        
+        
 //        NSLog(@"%@",ivar_name);
 //        NSLog(@"%@",ivar_type);
         
-        if ([allKeys containsObject:ivar_name]) {
+        // 处理属性名映射
+        if (propertyNameAllKeys.count > 0) {
+            if ([propertyNameAllKeys containsObject:ivar_name]) {
+                map_ivar_name = propertyNameDict[ivar_name];
+                if (map_ivar_name.length <= 0) {
+                    map_ivar_name = ivar_name;
+                }
+            }
+        }
+        
+//        NSLog(@"map_ivar_name %@",map_ivar_name);
+        
+        if ([dictAllKeys containsObject:map_ivar_name]) {
+            
             // dict有对应Key，就把key对应value赋值给objct对应属性
-            id ivar_value = dict[ivar_name];
+            id ivar_value = dict[map_ivar_name];
+
             if (ivar_value) {
                 
                 [obj setValue:ivar_value forKeyPath:ivar_name];
                 
-//                if ([self isSystemClassWithIvarType:ivar_type])
-//                {
-                    // 处理dictionaryObjectInArray
-                    if ([ivar_type isEqualToString:ClassStringForNSArray]) {
-                        if (objectInArrayAllKeys.count > 0) {
-                            if ([objectInArrayAllKeys containsObject:ivar_name] ) {
-                                id objectInArrayValue = objectInArrayDict[ivar_name];
-                                if (objectInArrayValue) {
-                                    ivar_value = [NSClassFromString(objectInArrayValue) objectsArrayWithDictionaryArray:dict[ivar_name]];
-                                    if (ivar_value) {
-                                        [obj setValue:ivar_value forKey:ivar_name];
-                                    }
+                // 处理dictionaryObjectInArray
+                if ([ivar_type isEqualToString:ClassStringForNSArray]) {
+                    if (objectInArrayAllKeys.count > 0) {
+                        if ([objectInArrayAllKeys containsObject:ivar_name] ) {
+                            id objectInArrayValue = objectInArrayDict[ivar_name];
+                            if (objectInArrayValue) {
+                                ivar_value = [NSClassFromString(objectInArrayValue) objectsArrayWithDictionaryArray:dict[ivar_name]];
+                                if (ivar_value) {
+                                    [obj setValue:ivar_value forKey:ivar_name];
                                 }
                             }
                         }
-                    }// end if ([ivar_type isEqualToString:nsarrayClassString])
-                    
-                    if ([ivar_value isKindOfClass:[NSDictionary class]]) {
-                        if (![ivar_type isEqualToString:ClassStringForNSDictionary]) {
-                            ivar_value = [NSClassFromString([ivar_type zg_classString]) objectWithDictionary:ivar_value];
-                            [obj setValue:ivar_value forKey:ivar_name];
-                        }
                     }
-                    
-//                }else { // 自定义类型
-//                    ivar_value = [NSClassFromString([ivar_type zg_classString]) objectWithDictionary:ivar_value];
-//                    [obj setValue:ivar_value forKey:ivar_name];
-//                }
+                }// end if ([ivar_type isEqualToString:nsarrayClassString])
                 
+                // 处理自定义类型
+                if ([ivar_value isKindOfClass:[NSDictionary class]]) {
+                    if (![ivar_type isEqualToString:ClassStringForNSDictionary]) {
+                        ivar_value = [NSClassFromString([ivar_type zg_classString]) objectWithDictionary:ivar_value];
+                        [obj setValue:ivar_value forKey:ivar_name];
+                    }
+                }
+
             }// end if(value)
         }// end if(allkeys....)
 
@@ -104,6 +118,10 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     NSDictionary *objectInArrayDict = [self dictionaryForObjectInArray];
     NSArray *objectInArrayAllKeys = objectInArrayDict.allKeys;
+    NSDictionary *propertyNameDict = [self dictionaryForPropertyNameMap];
+    NSArray *propertyNameAllKeys = propertyNameDict.allKeys;
+    
+    
     unsigned int outCount;
     Ivar *ivars =  class_copyIvarList([object class], &outCount);
     while (*ivars != NULL) {
@@ -115,12 +133,24 @@
         if ([[ivar_name substringToIndex:1] isEqualToString:@"_"]) {
             ivar_name = [ivar_name substringFromIndex:1];
         }
+        NSString *map_ivar_name = ivar_name;
 //        NSLog(@"%@",ivar_name);
 //        NSLog(@"%@",ivar_type);
+        
+        // 处理属性名映射
+        if (propertyNameAllKeys.count > 0) {
+            if ([propertyNameAllKeys containsObject:ivar_name]) {
+                map_ivar_name = propertyNameDict[ivar_name];
+                if (map_ivar_name.length <= 0) {
+                    map_ivar_name = ivar_name;
+                }
+            }
+        }
+        
 
         if (ivar_value) {
             // 把object的属性值赋给dict
-            [dict setObject:ivar_value forKey:ivar_name];
+            [dict setObject:ivar_value forKey:map_ivar_name];
             
 //            if ([self isSystemClassWithIvarType:ivar_type])
 //            {
@@ -134,7 +164,7 @@
                             if (objectInArrayValue) {
                                 ivar_value = [NSClassFromString(objectInArrayValue) dictionaryArrayWithObjectsArray:ivar_value];
                                 if (ivar_value) {
-                                    [dict setValue:ivar_value forKey:ivar_name];
+                                    [dict setValue:ivar_value forKey:map_ivar_name];
                                 }
                             }
                         }
@@ -144,7 +174,7 @@
                 
             }else { // 自定义类型
                 ivar_value = [NSClassFromString([ivar_type zg_classString]) dictionaryWithObject:ivar_value];
-                [dict setValue:ivar_value forKey:ivar_name];
+                [dict setValue:ivar_value forKey:map_ivar_name];
             }
         }
 
@@ -153,6 +183,7 @@
     
     return dict;
 }
+
 
 + (NSMutableArray *)dictionaryArrayWithObjectsArray:(NSArray *)objectsArray
 {
@@ -164,8 +195,14 @@
 }
 
 
+
 #pragma mark - 
 + (NSDictionary *)dictionaryForObjectInArray
+{
+    return nil;
+}
+
++ (NSDictionary *)dictionaryForPropertyNameMap
 {
     return nil;
 }
@@ -210,5 +247,7 @@
     BOOL isValid = [predicate evaluateWithObject:object.description];
     return !isValid;
 }
+
+
 
 @end
