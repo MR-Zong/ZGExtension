@@ -45,10 +45,6 @@
         }
         NSString *map_ivar_name = ivar_name;
         
-        
-       // NSLog(@"%@",ivar_name);
-//        NSLog(@"%@",ivar_type);
-        
         // 处理属性名映射 - 直接映射
         if (propertyNameAllKeys.count > 0) {
             if ([propertyNameAllKeys containsObject:ivar_name]) {
@@ -71,16 +67,11 @@
                         [obj setValue:value_keyPath forKey:ivar_name];
                     }
                     
-                    // 此次属性已经处理完毕
                      ivars++;
                     continue;
                 }
             }
         }
-        
-        
-        
-//        NSLog(@"map_ivar_name %@",map_ivar_name);
         
         if ([dictAllKeys containsObject:map_ivar_name]) {
             
@@ -190,14 +181,11 @@
         NSString *ivar_name = [NSString stringWithUTF8String:ivar_getName(*ivars)];
         NSString *ivar_type = [NSString stringWithUTF8String:ivar_getTypeEncoding(*ivars)];
         id ivar_value = [object valueForKeyPath:ivar_name];
-//        NSLog(@"ivar_value %@",ivar_value);
         if ([[ivar_name substringToIndex:1] isEqualToString:@"_"]) {
             ivar_name = [ivar_name substringFromIndex:1];
         }
         NSString *map_ivar_name = ivar_name;
-        
-//        NSLog(@"%@",ivar_name);
-//        NSLog(@"%@",ivar_type);
+
         // 处理属性名映射 - 直接映射
         if (propertyNameAllKeys.count > 0) {
             if ([propertyNameAllKeys containsObject:ivar_name]) {
@@ -226,7 +214,6 @@
                         [dict setValue:@"" forKey:ivar_name];
                     }
                     
-                    // 此次属性已经处理完毕
                     ivars++;
                     continue;
                 }
@@ -238,9 +225,7 @@
         if (ivar_value) {
             // 把object的属性值赋给dict
             [dict setObject:ivar_value forKey:map_ivar_name];
-            
-//            if ([self isSystemClassWithIvarType:ivar_type])
-//            {
+
             if ([self isSystemClassWithObject:ivar_value])
             {
                 // 处理dictionaryObjectInArray
@@ -341,10 +326,8 @@
 {
     NSBundle *mainB = [NSBundle bundleForClass:[object class]];
     if (mainB == [NSBundle mainBundle]) {
-//        NSLog(@"自定义的类");
         return NO;
     }else {
-//        NSLog(@"系统的类");
         return YES;
     }
 }
@@ -368,9 +351,6 @@
 
 + (BOOL)isSystemClassByDescriptionWithObject:(NSObject *)object
 {
-//    NSLog(@"desc %@",object.description);
-    // 正则匹配是否是自定义类型
-    // <ZGDog: 0x608000014cd0>
     NSString *regex = @"<[a-zA-z]+: 0x([0-9]|[a-f])+>";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     BOOL isValid = [predicate evaluateWithObject:object.description];
