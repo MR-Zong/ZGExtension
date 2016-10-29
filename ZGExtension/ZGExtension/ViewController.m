@@ -20,8 +20,8 @@
     [super viewDidLoad];
     
     // 样例演示
-   // [self example1];
-    [self example2];
+    [self example1];
+//    [self example2];
 }
 
 

@@ -201,9 +201,9 @@
             ivar_name = [ivar_name substringFromIndex:1];
         }
         NSString *map_ivar_name = ivar_name;
+        
 //        NSLog(@"%@",ivar_name);
 //        NSLog(@"%@",ivar_type);
-        
         // 处理属性名映射 - 直接映射
         if (propertyNameAllKeys.count > 0) {
             if ([propertyNameAllKeys containsObject:ivar_name]) {
@@ -223,7 +223,11 @@
                 }else {
                     id value_keyPath = [self valueForkeyPath:map_ivar_name object:ivar_value];
                     if (value_keyPath) {
-                        [dict setValue:value_keyPath forKey:ivar_name];
+                        NSString *complex_ivar_name = [map_ivar_name componentsSeparatedByString:@"."].firstObject;
+                        if (complex_ivar_name.length > 0) {
+                            [dict setValue:value_keyPath forKey:complex_ivar_name];
+                        }
+                        
                     }else {
                         [dict setValue:@"" forKey:ivar_name];
                     }
@@ -290,30 +294,27 @@
     }
     
     if (keyPath.length > 0) {
-        
-        if ([[keyPath substringToIndex:1] isEqualToString:@"."]) {
-            keyPath = [keyPath substringFromIndex:1];
+        if ([[keyPath substringFromIndex:keyPath.length - 1] isEqualToString:@"."]) {
+            keyPath = [keyPath substringToIndex:keyPath.length - 1];
         }
-        NSString *key = [keyPath componentsSeparatedByString:@"."].firstObject;
-        keyPath = [keyPath substringFromIndex:key.length];
-        //NSLog(@"key %@",key);
+        if (![keyPath containsString:@"."]) {
+            return object;
+        }
+        NSString *key = [keyPath componentsSeparatedByString:@"."].lastObject;
+        keyPath = [keyPath substringToIndex:( keyPath.length - key.length)];
         
-        if ([object isKindOfClass:[NSDictionary class]]) {
-            return [self valueWithObject:object[key] keyPath:keyPath];
-        }else if ([object isKindOfClass:[NSArray class]]){
-            if (![key containsString:@"@"]) {
-                return nil;
+        if (key.length > 0) {
+            if ([key containsString:@"@"]) {
+                NSMutableArray *mArray = [NSMutableArray array];
+                [mArray addObject:object];
+                return [self valueForkeyPath:keyPath object:mArray];
             }else {
-                if ([key isEqualToString:@"@@"]) {
-                    return [self valueWithObject:[object lastObject] keyPath:keyPath];
-                }else {
-                    int index = [[key substringToIndex:1] intValue];
-                    return [self valueWithObject:object[index] keyPath:keyPath];
-                }
+                NSMutableDictionary *mDict = [NSMutableDictionary dictionary];
+                [mDict setObject:object forKey:key];
+                return [self valueForkeyPath:keyPath object:mDict];
             }
-        }else {
-            return nil;
         }
+        
         
     }else {
         return object;
