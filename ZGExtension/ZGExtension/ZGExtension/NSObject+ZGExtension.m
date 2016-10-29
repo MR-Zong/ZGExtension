@@ -18,11 +18,6 @@
 #define ClassStringForInt  ( @"q" )
 #define ClassStringForBool  ( @"B" )
 
-/**
- * 明天任务：
- * 1，解决属性名映射
- * 2，解决新建一个属性来直接指向需要用到的深层级的对象(必须实现)
- **/
 
 @implementation NSObject (ZGExtension)
 
@@ -150,7 +145,6 @@
         }
         NSString *key = [keyPath componentsSeparatedByString:@"."].firstObject;
         keyPath = [keyPath substringFromIndex:key.length];
-        //NSLog(@"key %@",key);
         
         if ([object isKindOfClass:[NSDictionary class]]) {
             return [self valueWithObject:object[key] keyPath:keyPath];
