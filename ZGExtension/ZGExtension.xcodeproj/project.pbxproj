@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF357E731DC83FF50004F860 /* ZGExtensionShow1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF357E711DC83FF50004F860 /* ZGExtensionShow1.jpg */; };
+		EF357E741DC83FF50004F860 /* ZGExtensionShow2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF357E721DC83FF50004F860 /* ZGExtensionShow2.jpg */; };
+		EF357E761DC840580004F860 /* ZGExtensionShow3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF357E751DC840580004F860 /* ZGExtensionShow3.jpg */; };
 		EF3F7AD41DC0F7AA00EE1446 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7AD31DC0F7AA00EE1446 /* main.m */; };
 		EF3F7AD71DC0F7AA00EE1446 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7AD61DC0F7AA00EE1446 /* AppDelegate.m */; };
 		EF3F7ADA1DC0F7AA00EE1446 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3F7AD91DC0F7AA00EE1446 /* ViewController.m */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF357E711DC83FF50004F860 /* ZGExtensionShow1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ZGExtensionShow1.jpg; sourceTree = "<group>"; };
+		EF357E721DC83FF50004F860 /* ZGExtensionShow2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ZGExtensionShow2.jpg; sourceTree = "<group>"; };
+		EF357E751DC840580004F860 /* ZGExtensionShow3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ZGExtensionShow3.jpg; sourceTree = "<group>"; };
 		EF3F7ACF1DC0F7AA00EE1446 /* ZGExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZGExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3F7AD31DC0F7AA00EE1446 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF3F7AD51DC0F7AA00EE1446 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -128,6 +134,9 @@
 		EF3F7AD21DC0F7AA00EE1446 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EF357E711DC83FF50004F860 /* ZGExtensionShow1.jpg */,
+				EF357E721DC83FF50004F860 /* ZGExtensionShow2.jpg */,
+				EF357E751DC840580004F860 /* ZGExtensionShow3.jpg */,
 				EF3F7AD31DC0F7AA00EE1446 /* main.m */,
 				EFB695821DC19229003BE1FA /* ZGDataModel.h */,
 				EFB695831DC19229003BE1FA /* ZGDataModel.m */,
@@ -276,8 +285,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF357E731DC83FF50004F860 /* ZGExtensionShow1.jpg in Resources */,
+				EF357E741DC83FF50004F860 /* ZGExtensionShow2.jpg in Resources */,
 				EF3F7AE21DC0F7AA00EE1446 /* LaunchScreen.storyboard in Resources */,
 				EF3F7ADF1DC0F7AA00EE1446 /* Assets.xcassets in Resources */,
+				EF357E761DC840580004F860 /* ZGExtensionShow3.jpg in Resources */,
 				EF3F7ADD1DC0F7AA00EE1446 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

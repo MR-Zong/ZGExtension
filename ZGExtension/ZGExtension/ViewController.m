@@ -20,8 +20,8 @@
     [super viewDidLoad];
     
     // 样例演示
-    [self example1];
-//    [self example2];
+//    [self example1];
+    [self example2];
 }
 
 
@@ -60,7 +60,6 @@
     NSLog(@"    age %zd",model.age);
     NSLog(@"    money %f",model.money);
     NSLog(@"    debt %f",model.debt);
-    NSLog(@"    isMan %zd",model.isMan);
     NSLog(@"    isMan %zd",model.isMan);
     NSLog(@"    teachersArray %@",model.teachersArray);
     NSLog(@"    schoolReport %@",model.schoolReport);
