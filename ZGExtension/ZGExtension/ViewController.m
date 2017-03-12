@@ -53,7 +53,7 @@
                                    }
                            };
     
-    ZGDataModel *model =  [ZGDataModel objectWithDictionary:dict];
+    ZGDataModel *model =  [ZGDataModel zg_objectWithDictionary:dict];
     NSLog(@"model :");
     NSLog(@"    name %@",model.name);
     NSLog(@"    phone %@",model->phone);
@@ -100,7 +100,7 @@
     model.ID = 10001;
     model.grade = 88;
     model.myRoomNumber = 102;
-    NSDictionary *dict = [ZGDataModel dictionaryWithObject:model];
+    NSDictionary *dict = [ZGDataModel zg_dictionaryWithObject:model];
     NSLog(@"dict %@",dict);
 }
 

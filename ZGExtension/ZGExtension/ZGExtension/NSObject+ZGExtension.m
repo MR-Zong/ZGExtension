@@ -21,16 +21,16 @@
 
 @implementation NSObject (ZGExtension)
 
-+ (instancetype)objectWithDictionary:(NSDictionary *)dict
++ (instancetype)zg_objectWithDictionary:(NSDictionary *)dict
 {
     id obj = [[[self class] alloc] init];
 
     NSArray *dictAllKeys = dict.allKeys;
-    NSDictionary *objectInArrayDict = [self dictionaryForObjectInArray];
+    NSDictionary *objectInArrayDict = [self zg_dictionaryForObjectInArray];
     NSArray *objectInArrayAllKeys = objectInArrayDict.allKeys;
-    NSDictionary *propertyNameDict = [self dictionaryForPropertyNameMap];
+    NSDictionary *propertyNameDict = [self zg_dictionaryForPropertyNameMap];
     NSArray *propertyNameAllKeys = propertyNameDict.allKeys;
-    NSDictionary *propertyNameComplexDict = [self dictionaryForPropertyNameComplexMap];
+    NSDictionary *propertyNameComplexDict = [self zg_dictionaryForPropertyNameComplexMap];
     NSArray *propertyNameComplexAllKeys = propertyNameComplexDict.allKeys;
     
     
@@ -88,7 +88,7 @@
                         if ([objectInArrayAllKeys containsObject:ivar_name] ) {
                             id objectInArrayValue = objectInArrayDict[ivar_name];
                             if (objectInArrayValue) {
-                                ivar_value = [NSClassFromString(objectInArrayValue) objectsArrayWithDictionaryArray:dict[ivar_name]];
+                                ivar_value = [NSClassFromString(objectInArrayValue) zg_objectsArrayWithDictionaryArray:dict[ivar_name]];
                                 if (ivar_value) {
                                     [obj setValue:ivar_value forKey:ivar_name];
                                 }
@@ -100,7 +100,7 @@
                 // 处理自定义类型
                 if ([ivar_value isKindOfClass:[NSDictionary class]]) {
                     if (![ivar_type isEqualToString:ClassStringForNSDictionary]) {
-                        ivar_value = [NSClassFromString([ivar_type zg_classString]) objectWithDictionary:ivar_value];
+                        ivar_value = [NSClassFromString([ivar_type zg_classString]) zg_objectWithDictionary:ivar_value];
                         [obj setValue:ivar_value forKey:ivar_name];
                     }
                 }
@@ -114,11 +114,11 @@
     return obj;
 }
 
-+ (NSMutableArray *)objectsArrayWithDictionaryArray:(NSArray *)dictArray
++ (NSMutableArray *)zg_objectsArrayWithDictionaryArray:(NSArray *)dictArray
 {
     NSMutableArray *objsArray = [NSMutableArray array];
     for (NSDictionary *dict in dictArray) {
-        [objsArray addObject:[self objectWithDictionary:dict]];
+        [objsArray addObject:[self zg_objectWithDictionary:dict]];
     }
     return objsArray;
 }
@@ -164,14 +164,14 @@
     return nil;
 }
 
-+ (NSMutableDictionary *)dictionaryWithObject:(id)object
++ (NSMutableDictionary *)zg_dictionaryWithObject:(id)object
 {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSDictionary *objectInArrayDict = [self dictionaryForObjectInArray];
+    NSDictionary *objectInArrayDict = [self zg_dictionaryForObjectInArray];
     NSArray *objectInArrayAllKeys = objectInArrayDict.allKeys;
-    NSDictionary *propertyNameDict = [self dictionaryForPropertyNameMap];
+    NSDictionary *propertyNameDict = [self zg_dictionaryForPropertyNameMap];
     NSArray *propertyNameAllKeys = propertyNameDict.allKeys;
-    NSDictionary *propertyNameComplexDict = [self dictionaryForPropertyNameComplexMap];
+    NSDictionary *propertyNameComplexDict = [self zg_dictionaryForPropertyNameComplexMap];
     NSArray *propertyNameComplexAllKeys = propertyNameComplexDict.allKeys;
     
     unsigned int outCount;
@@ -234,7 +234,7 @@
                         if ([objectInArrayAllKeys containsObject:ivar_name] ) {
                             id objectInArrayValue = objectInArrayDict[ivar_name];
                             if (objectInArrayValue) {
-                                ivar_value = [NSClassFromString(objectInArrayValue) dictionaryArrayWithObjectsArray:ivar_value];
+                                ivar_value = [NSClassFromString(objectInArrayValue) zg_dictionaryArrayWithObjectsArray:ivar_value];
                                 if (ivar_value) {
                                     [dict setValue:ivar_value forKey:map_ivar_name];
                                 }
@@ -245,7 +245,7 @@
             
                 
             }else { // 自定义类型
-                ivar_value = [NSClassFromString([ivar_type zg_classString]) dictionaryWithObject:ivar_value];
+                ivar_value = [NSClassFromString([ivar_type zg_classString]) zg_dictionaryWithObject:ivar_value];
                 [dict setValue:ivar_value forKey:map_ivar_name];
             }
         }
@@ -257,11 +257,11 @@
 }
 
 
-+ (NSMutableArray *)dictionaryArrayWithObjectsArray:(NSArray *)objectsArray
++ (NSMutableArray *)zg_dictionaryArrayWithObjectsArray:(NSArray *)objectsArray
 {
     NSMutableArray *dictArray = [NSMutableArray array];
     for (id object in objectsArray) {
-        [dictArray addObject:[[object class] dictionaryWithObject:object]];
+        [dictArray addObject:[[object class] zg_dictionaryWithObject:object]];
     }
     return dictArray;
 }
@@ -306,17 +306,17 @@
 }
 
 #pragma mark - 
-+ (NSDictionary *)dictionaryForObjectInArray
++ (NSDictionary *)zg_dictionaryForObjectInArray
 {
     return nil;
 }
 
-+ (NSDictionary *)dictionaryForPropertyNameMap
++ (NSDictionary *)zg_dictionaryForPropertyNameMap
 {
     return nil;
 }
 
-+ (NSDictionary *)dictionaryForPropertyNameComplexMap
++ (NSDictionary *)zg_dictionaryForPropertyNameComplexMap
 {
     return nil;
 }

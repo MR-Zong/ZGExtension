@@ -10,18 +10,18 @@
 
 @interface NSObject (ZGExtension)
 
-+ (instancetype)objectWithDictionary:(NSDictionary *)dict;
-+ (NSMutableArray *)objectsArrayWithDictionaryArray:(NSArray *)dictArray;
++ (instancetype)zg_objectWithDictionary:(NSDictionary *)dict;
++ (NSMutableArray *)zg_objectsArrayWithDictionaryArray:(NSArray *)dictArray;
 
-+ (NSMutableDictionary *)dictionaryWithObject:(id)object;
-+ (NSMutableArray *)dictionaryArrayWithObjectsArray:(NSArray *)objectsArray;
++ (NSMutableDictionary *)zg_dictionaryWithObject:(id)object;
++ (NSMutableArray *)zg_dictionaryArrayWithObjectsArray:(NSArray *)objectsArray;
 
 #pragma mark - 
 /**
  * 返回一个字典
  * 字典的key是属性名（数组类型），value是数组种的元素对象类型
  **/
-+ (NSDictionary *)dictionaryForObjectInArray;
++ (NSDictionary *)zg_dictionaryForObjectInArray;
 
 /**
  * 直接映射
@@ -30,7 +30,7 @@
  * 这样就两个属性，会拥有相同的值）
  * 字典的key是原来属性名，value是新属性名
  **/
-+ (NSDictionary *)dictionaryForPropertyNameMap;
++ (NSDictionary *)zg_dictionaryForPropertyNameMap;
 
 /**
  * 深层级映射(复杂映射)
@@ -46,6 +46,6 @@
  * 如果映射b 即：data[0][0],写成 -> data.@0.@0 （取数组最后一个，@@）
  * 如果映射c 即：data[1][@"c"],写成 -> data.@1.c
  **/
-+ (NSDictionary *)dictionaryForPropertyNameComplexMap;
++ (NSDictionary *)zg_dictionaryForPropertyNameComplexMap;
 
 @end
